@@ -1,6 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '--platform', 'linux/amd64', '-t', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:amd64', '.', '-f', 'Dockerfile']
+  args:
+  - 'build'
+  - '-t'
+  - 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:amd64'
+  - '.'
 images:
 - 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:amd64'
 options:
