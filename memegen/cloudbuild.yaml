@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['buildx', 'build', '--platform', 'linux/amd64', '-t', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:amd64', '.', '-o', 'type=image,push=true']
+images:
+- 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:amd64'
+options:
+  machineType: 'E2_HIGHCPU_8'
