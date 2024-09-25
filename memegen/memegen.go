@@ -45,7 +45,8 @@ func createMeme(im image.Image, textTop string, textBottom string) image.Image {
 		}
 	}
 
-	dc.SetRGB(1, 1, 1)
+	// dc.SetRGB(1, 1, 1) // white
+	dc.SetRGB(0, 1, 0) // green
 	dc.DrawStringAnchored(strings.ToUpper(textTop), positionX, positionTopY, 0.5, 0)
 	dc.DrawStringAnchored(strings.ToUpper(textBottom), positionX, positionBottomY, 0.5, 1)
 
@@ -63,7 +64,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	imgURL := q.Get("image")
 	if imgURL == "" {
 		w.Header().Set("Content-Type", "text/html")
-		fmt.Fprintf(w, "Generate meme by providing an image URL, top and bottom text using query parameters. See <a href=\"/?top=I'm in ur cloud&bottom=creating ur memes&image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg\">example</a>")
+		fmt.Fprintf(w, "Generate meme by providing an image URL, top and bottom text using query parameters. See <a href=\"/?top=I'm a datacat&bottom=do my best&image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg\">example</a>")
 		return
 	}
 	resp, err := http.Get(imgURL)
