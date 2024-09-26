@@ -34,6 +34,8 @@ spec:
     ################################
     canary:
       steps:
+      - setWeight: 20
+      - pause: {duration: 10}
       - setWeight: 50
       - pause: {duration: 10}
       - experiment:

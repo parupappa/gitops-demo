@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route(f"/")
 def home():
-    # New York
-    api_url="http://api.weatherapi.com/v1/current.json?key=25aea85b29904b80bb244012220507&q=New%20York&aqi=no"
+    # Tokyo
+    api_url="https://api.weatherapi.com/v1/current.json?key=25aea85b29904b80bb244012220507&q=Tokyo&aqi=no"
     response = requests.get(api_url)
     response.raise_for_status()
     if response.status_code != 204:
@@ -26,7 +26,7 @@ def home():
         else:
             weather = "Rain"
 
-        return render_template("index.html",temp=temp,wind_speed=wind_speed,weather=weather, location='Hyderabad')
+        return render_template("index.html",temp=temp,wind_speed=wind_speed,weather=weather, location='Tokyo')
 
     else:
 
