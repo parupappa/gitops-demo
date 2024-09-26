@@ -24,7 +24,7 @@ $ docker push asia-northeast1-docker.pkg.dev/$PROJECT_ID/gitops-demo/memegen:blu
 # Set up the environment
 $ export PROJECT_ID=test-yokoo
 
-# build & push ArtifactRegistry　
+# build & push ArtifactRegistry
 # memegen 配下で実行すること
 $ gcloud builds submit \
   --project test-yokoo \    
@@ -42,3 +42,17 @@ port-forward
 
 初期パスワード
 - kubectl -n argocd get secret/argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo 
+
+
+# Demo1
+
+
+# Demo2
+
+```bash
+# 3秒ごとにリクエストを送信するシェルスクリプトを実行
+$ sh access.sh
+
+# 別ターミナルで確認
+$ tail -f ./gitops-demo/weather-app/log.txt
+```

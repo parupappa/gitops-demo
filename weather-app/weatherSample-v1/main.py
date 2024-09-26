@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route(f"/")
 def home():
-    # Hyderabad
-    api_url="http://api.weatherapi.com/v1/current.json?key=25aea85b29904b80bb244012220507&q=Hyderabad&aqi=no"
+    # New York
+    api_url="http://api.weatherapi.com/v1/current.json?key=25aea85b29904b80bb244012220507&q=New%20York&aqi=no"
     response = requests.get(api_url)
     response.raise_for_status()
     if response.status_code != 204:

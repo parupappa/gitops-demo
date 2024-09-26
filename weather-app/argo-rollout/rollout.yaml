@@ -55,7 +55,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: docker.io/atulinfracloud/weathersample:v1
+        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/weather-app:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
