@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: rollout-experiment
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     # canary strategy gradually shifts traffic from the baseline to the canary
     # canary:
@@ -40,7 +40,7 @@ spec:
           analyses:
           - name: canary-experiment
             templateName: webmetric
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: rollout-experiment
@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: docker.io/atulinfracloud/weathersample:v1
+        image: docker.io/atulinfracloud/weathersample:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
