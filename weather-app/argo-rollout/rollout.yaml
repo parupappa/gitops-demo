@@ -10,9 +10,9 @@ spec:
       - setWeight: 50
       - pause:
           duration: 5m
-    analyses:
-    - name: canary-experiment
-      templateName: webmetric
+  analyses:
+  - name: canary-experiment
+    templateName: webmetric
   revisionHistoryLimit: 2
   selector:
     matchLabels:
