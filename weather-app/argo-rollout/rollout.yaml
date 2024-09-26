@@ -5,7 +5,9 @@ metadata:
 spec:
   replicas: 1
   strategy:
+    ################################
     # canary strategy gradually shifts traffic from the baseline to the canary
+    ################################
     # canary:
     #   steps:
     #   - setWeight: 20
@@ -27,7 +29,9 @@ spec:
     #   - pause: {duration: 10}
     #   - setWeight: 80
     #   - pause: {duration: 10}
-    # ABテスト用のステップを追加
+    ################################
+    # A/B testing
+    ################################
     canary:
       steps:
       - setWeight: 50
@@ -51,7 +55,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/memegen:green
+        image: docker.io/atulinfracloud/weathersample:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
