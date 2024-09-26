@@ -73,23 +73,3 @@ spec:
       port: 80
       targetPort: 5000
   type: LoadBalancer
-
-
----
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: rollout-ingress
-#   annotations:
-#     kubernetes.io/ingress.class: nginx
-# spec:
-#   rules:
-#   - http:
-#       paths:
-#       - path: /
-#         pathType: Prefix
-#         backend:
-#           service:
-#             name: rollout-weather-svc
-#             port:
-#               number: 80
