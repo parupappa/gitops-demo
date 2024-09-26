@@ -7,21 +7,12 @@ spec:
   strategy:
     canary:
       steps:
-      - setWeight: 20
-      - pause: {duration: 10}
-      # The second step is the experiment which starts a single canary pod
-      - experiment:
-          duration: 5m
-          templates:
-          - name: canary
-            specRef: canary
-          # This experiment performs its own analysis by referencing an AnalysisTemplates
-          # The success or failure of these runs will progress or abort the rollout respectively.
-          analyses:
-          - name: canary-experiment
-            templateName: webmetric
       - setWeight: 50
-      - pause: {duration: 10}
+      - pause:
+          duration: 5m
+    analyses:
+    - name: canary-experiment
+      templateName: webmetric
   revisionHistoryLimit: 2
   selector:
     matchLabels:
