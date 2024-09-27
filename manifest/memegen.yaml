@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: memegen
-        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/memegen:green
+        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/memegen:white
         ports:
         - containerPort: 8080
         env:
