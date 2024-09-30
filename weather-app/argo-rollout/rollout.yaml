@@ -57,7 +57,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/weather-app:Tokyo
+        image: asia-northeast1-docker.pkg.dev/test-yokoo/gitops-demo/weather-app:NewYork
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
