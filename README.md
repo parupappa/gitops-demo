@@ -1,19 +1,8 @@
-# time
-4p : 4min
-8p : 6min15
-
-
-
-
-10p : 7min43
-19p : 13min
-
 # 事前準備
 - [ ] ArgoCD port-forward
   - [ ] `kubectl port-forward svc/argocd-server -n argocd 8080:443`
   - [ ] initial password
     - [ ] `kubectl -n argocd get secret/argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo` 
-    - [ ] 2KG7OcaBzAKswWrQ
   - [ ] http://localhowst:8080
 - [ ] Argo Rollout
   - [ ] `kubectl argo rollouts dashboard`
@@ -35,7 +24,7 @@ $ sh access.sh
 $ tail -f log.txt
 ```
 
-# Commnad
+# Command
 ```bash
 # Set up the environment
 $ export PROJECT_ID=test-yokoo
