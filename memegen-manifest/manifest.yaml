@@ -39,7 +39,7 @@ metadata:
   name: argocd-notifications-cm
 data:
   service.webhook.cd-visibility-webhook: |
-    url: https://webhook-intake.<code class="js-region-param region-param" data-region-param="dd_site"></code>/api/v2/webhook
+    url: https://webhook-intake.<code class="js-region-param region-param" data-region-param="datadoghq.com"></code>/api/v2/webhook
     headers:
     - name: "DD-CD-PROVIDER-ARGOCD"
       value: "true"
