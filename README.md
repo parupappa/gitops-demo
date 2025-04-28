@@ -36,3 +36,12 @@ $ gcloud builds submit \
   --region asia-northeast1 \
   .
 ```
+
+# build & push ArtifactRegistry
+$ gcloud builds submit \
+  --project datadog-sandbox \    
+  --tag asia-northeast1-docker.pkg.dev/datadog-sandbox/annosuke/memegen:green \
+  --region asia-northeast1 \
+  .
+
+docker build -t  asia-northeast1-docker.pkg.dev/datadog-sandbox/annosuke/memegen:green -f .

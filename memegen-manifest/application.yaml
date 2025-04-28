@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: memegen
+  namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.cd-visibility-trigger.cd-visibility-webhook: ""
+    dd_env: development
+    dd_service: memegen
+    dd_customtags: "team:japan-se"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/parupappa/gitops-demo.git
+    targetRevision: main
+    path: memegen-manifest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
