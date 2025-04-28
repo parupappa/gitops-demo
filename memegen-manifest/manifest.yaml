@@ -56,8 +56,7 @@ data:
               "app": {{toJson .app}},
               "context": {{toJson .context}},
               "service_type": {{toJson .serviceType}},
-              "recipient": {{toJson .recipient}},
-              "commit_metadata": {{toJson (call .repo.GetCommitMetadata .app.status.operationState.syncResult.revision)}}
+              "recipient": {{toJson .recipient}}
             }    
   trigger.cd-visibility-trigger: |
     - when: app.status.operationState.phase in ['Succeeded', 'Failed', 'Error'] and app.status.health.status in ['Healthy', 'Degraded']
