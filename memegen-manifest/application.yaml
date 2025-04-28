@@ -1,8 +1,6 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: memegen
-  namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.cd-visibility-trigger.cd-visibility-webhook: ""
     dd_env: staging
