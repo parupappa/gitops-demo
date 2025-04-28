@@ -44,10 +44,7 @@ data:
     - name: "DD-CD-PROVIDER-ARGOCD"
       value: "true"
     - name: "DD-API-KEY"
-      valueFrom:
-        secretKeyRef:
-          name: dd-api-key-secret
-          key: DD_API_KEY
+      value: $dd-api-key
     - name: "Content-Type"
       value: "application/json"    
   template.cd-visibility-template: |
