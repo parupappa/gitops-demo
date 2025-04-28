@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: memegen
-        image: nginx:1.28.0
+        image: nginx:latest
         ports:
         - containerPort: 80
 ---
@@ -63,3 +63,20 @@ data:
       send: [cd-visibility-template]
     - when: app.status.operationState.phase == 'Running' and app.status.health.status in ['Healthy', 'Degraded']
       send: [cd-visibility-template]    
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cdvisibility-postsync-job # Ensures that the Argo CD sync duration waits for resources health
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: noop-echo
+          image: alpine:latest
+          command: ["echo", "all the sync resources have reached a healthy state"]
+      restartPolicy: Never
+  backoffLimit: 0
