@@ -14,8 +14,6 @@ spec:
       labels:
         app: memegen
     spec:
-      imagePullSecrets:
-        - name: artifact-registry-secret
       containers:
       - name: memegen
         image: nginx:latest
