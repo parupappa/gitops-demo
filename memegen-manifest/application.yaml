@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.cd-visibility-trigger.cd-visibility-webhook: ""
-    dd_env: development
+    dd_env: staging
     dd_service: memegen
     dd_customtags: "team:japan-se"
 spec:
