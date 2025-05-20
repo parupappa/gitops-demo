@@ -45,3 +45,16 @@ $ gcloud builds submit \
   .
 
 docker build -t  asia-northeast1-docker.pkg.dev/datadog-sandbox/annosuke/memegen:green -f .
+
+
+
+```bash
+# ArgoCD PortForward
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
+# ArgoCD Password
+kubectl -n argocd get secret/argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+
+# minikube への Service アクセス
+minikube service memegen-service --url
+```
