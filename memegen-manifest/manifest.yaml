@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: memegen
-        image: nginx:latesttest
+        image: nginx:1.28.0
         ports:
         - containerPort: 80
 ---
